@@ -2,6 +2,8 @@ let playerText = document.getElementById('playerText');
 let restartBtn = document.getElementById('restartBtn');
 let boxes = Array.from(document.getElementsByClassName('box'));
 
+const snd = document.querySelector(".snd")
+
 const O_TEXT = "O";
 const X_TEXT = "X";
 let currentPlayer = X_TEXT;
@@ -9,6 +11,8 @@ let spaces = Array(9).fill(null);
 
 const startGame = () => {
   boxes.forEach(box => box.addEventListener('click', boxClicked));
+snd.src = "snd.mp3"
+snd.play()
 };
 
 function boxClicked(e) {
